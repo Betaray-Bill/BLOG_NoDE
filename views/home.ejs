@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blogs</title>
+        <script src="https://use.fontawesome.com/0d910e0ed7.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <script src="https://use.fontawesome.com/0d910e0ed7.js"></script>
+        <script src="https://use.fontawesome.com/60ed4904aa.js"></script>
+        <script src="https://use.fontawesome.com/0d910e0ed7.js"></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <%- include('header'); -%>
+        <div class="container">
+            <h2>Home</h2>
+            <p><%= homeStartingContent %></p>
+            <% console.log(posts.title) %>
+            <%posts.forEach(function(post){%>
+              <h2><%=post.title%></h2>
+              <p><%=post.content.substring(0, 150) + '...'%></p>
+              <a href="/post/<%= post.title%>">Read more</a>
+            <%} )%>
+        </div>
+        <%- include('footer'); -%>
+    </body>
+</html>
